@@ -1,9 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 "use client";
-import Chart from "react-apexcharts";
 import { useCallback, useEffect, useState } from "react";
 import { Root } from "./type";
+import dynamic from "next/dynamic";
+
+const Chart = dynamic(() => import("react-apexcharts"), {
+	ssr: false,
+});
+
 const cities = ["Bangalore", "Chennai", "Kolkata", "Delhi", "Mumbai"];
 export default function Home() {
 	const [weather, setWeather] = useState<Root>();
