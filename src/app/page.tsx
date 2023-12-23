@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 "use client";
-
+import Chart from "react-apexcharts";
 import { useCallback, useEffect, useState } from "react";
 import { Root } from "./type";
 const cities = ["Bangalore", "Chennai", "Kolkata", "Delhi", "Mumbai"];
@@ -32,8 +32,8 @@ export default function Home() {
 
 	if (!weather) {
 		return (
-			<div className="bg-blue-500 grid grid-cols-10 grid-rows-10 h-screen">
-				loadin ...
+			<div className=" bg-blue-500 h-screen">
+				<div className="weather-loader" />
 			</div>
 		);
 	} else {
@@ -50,19 +50,16 @@ export default function Home() {
 						<div
 							key={ele}
 							className={` ${
-								ele === cities[index] ? "visible  p-5 self-center card" : "not-visible"
+								ele === cities[index]
+									? "visible  p-5 self-center justify-center card"
+									: "not-visible"
 							}`}
 						>
-							<div className="flex  flex-row">
-								<p className={`text-2xl title`}>{weather?.location.name}</p>
-								<p className="text-md align-middle m-1 country">
-									{weather?.location.country}
-								</p>
-							</div>
-							<div className="flex justify-between flex-row">
-								<p className="text-9xl temp">{weather?.current.temp_c}</p>
-							</div>
-							<div className="flex  flex-row">
+							<p className={`text-2xl text-center title`}>{weather?.location.name}</p>
+
+							<p className="text-9xl temp text-center">{weather?.current.temp_c}</p>
+
+							<div className="flex justify-center flex-row">
 								<img
 									src={weather?.current.condition.icon}
 									style={{ height: 45, width: 45 }}
@@ -71,7 +68,7 @@ export default function Home() {
 								<p className="text-4xl">{weather?.current.condition.text}</p>
 							</div>
 							{weather?.current.last_updated && (
-								<p className="my-3">
+								<p className="my-3 text-center">
 									{new Date(weather?.current.last_updated).toDateString()}
 								</p>
 							)}
@@ -82,7 +79,30 @@ export default function Home() {
 						onClick={callNext}
 					/>
 				</div>
-				<div className="bg-blue-100 lg:col-span-6 col-span-10 lg:row-span-10 row-span-6 lg:h-screen  lg:rounded-l-3xl  lg:rounded-r-none rounded-t-3xl p-10"></div>
+				<div className="bg-blue-100 lg:col-span-6 col-span-10 lg:row-span-10 row-span-6 lg:h-screen  lg:rounded-l-3xl  lg:rounded-r-none rounded-t-3xl p-10">
+					<div className="toolbar bg-blue-300 flex  p-4 rounded-md mb-7"></div>
+					<div className="h-3/6  min-w-full	card">
+						<Chart
+							options={{
+								chart: {
+									id: "apexchart-example",
+								},
+								xaxis: {
+									categories: cities,
+								},
+							}}
+							series={[
+								{
+									name: "series-1",
+									data: [30, 40, 35, 50, 49],
+								},
+							]}
+							type="bar"
+							height={"100%"}
+							width={"100%"}
+						/>
+					</div>
+				</div>
 			</div>
 		);
 	}
