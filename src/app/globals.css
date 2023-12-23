@@ -3,25 +3,104 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+			to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))
+		)
+		rgb(var(--background-start-rgb));
+}
+.card {
+	/* display: flex; */
+	border-radius: 20px;
+}
+
+.left,
+.right {
+	align-self: center;
+	padding: 10px 15px;
+	border-radius: 100%;
+}
+.card,
+.left,
+.right {
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	background-color: rgb(255 255 255 / 0%);
+	box-shadow: 0 0 10px 1px rgb(67 86 113 / 57%);
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
+}
+.visible {
+	opacity: 1;
+}
+.not-visible {
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+.left::after {
+	content: " < ";
+}
+.right::after {
+	content: " > ";
+}
+.Mumbai {
+	background-image: url("https://i.pinimg.com/564x/d9/9c/01/d99c018b4fce09caade7413ad1573732.jpg");
+}
+.Bangalore {
+	background-image: url("https://i.pinimg.com/564x/00/c0/e3/00c0e37f99d0c195b2ee020dd3c15632.jpg");
+}
+
+.Chennai {
+	background-image: url("https://static.displate.com/857x1200/displate/2023-04-11/c996b40f624a5bb3ea703121100bc0a2_c5fbc88c8d884168004235c25da16fea.jpg");
+}
+
+.Delhi {
+	background-image: url("https://i.pinimg.com/564x/cf/eb/01/cfeb01729e6640bd77185b34afa6fe43.jpg");
+}
+.Kolkata {
+	background-image: url("https://i.pinimg.com/564x/1b/77/7e/1b777e641ab3f0fb11f23c8d48381199.jpg");
+}
+
+.Mumbai,
+.Bangalore,
+.Chennai,
+.Kolkata,
+.Delhi {
+	background-size: cover;
+	background-position: center;
+}
+
+.temp::after {
+	content: "c";
+	font-size: 25px;
+	vertical-align: top;
+}
+
+.Mumbai,
+.Bangalore,
+.Chennai,
+.Kolkata,
+.Delhi {
+	transition: all 0.6s ease-in;
+}
+.visible {
+	transition: all 0.8s ease-out;
 }
