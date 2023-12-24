@@ -17,6 +17,7 @@
 }
 
 body {
+	overflow: hidden;
 	color: rgb(var(--foreground-rgb));
 	background: linear-gradient(
 			to bottom,
@@ -32,9 +33,10 @@ body {
 .left,
 .right {
 	align-self: center;
-	padding: 10px 15px;
+	padding: 10px;
 	border-radius: 100%;
 }
+
 .card,
 .left,
 .right {
@@ -44,22 +46,20 @@ body {
 	-webkit-backdrop-filter: blur(15px);
 	backdrop-filter: blur(15px);
 }
-.visible {
+.visible,
+.visible > .temp {
 	opacity: 1;
 }
-.not-visible {
+
+.not-visible,
+.not-visible > .temp {
 	opacity: 0;
 	visibility: hidden;
 	overflow: hidden;
 	position: absolute;
 	top: 0;
 }
-.left::after {
-	content: " < ";
-}
-.right::after {
-	content: " > ";
-}
+
 .Mumbai {
 	background-image: url("https://i.pinimg.com/564x/d9/9c/01/d99c018b4fce09caade7413ad1573732.jpg");
 }
@@ -98,12 +98,20 @@ body {
 .Chennai,
 .Kolkata,
 .Delhi {
-	transition: all 0.6s ease-in;
+	transition: background-image 0.6s ease;
 }
 .visible {
 	transition: all 0.8s ease-out;
 }
 
+.visible > .temp {
+	transition: opacity 0.8s ease 0.1s;
+}
+
+.deg::after {
+	content: "o";
+	vertical-align: super;
+}
 .weather-loader {
 	width: 70px;
 	height: 70px;
@@ -150,5 +158,11 @@ body {
 	}
 	to {
 		margin-left: -50px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.mobile {
+		display: none;
 	}
 }
