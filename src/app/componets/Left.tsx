@@ -1,18 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import { Root, cities } from "../type";
-type LeftProps = {
-	weather?: Root[];
-	index: number;
-	callPrevious: any;
-	callNext: any;
-};
+import { WeatherContext } from "../context/Weather";
+type LeftProps = {};
 
-const Left: FC<LeftProps> = ({ weather, index, callPrevious, callNext }) => {
+const Left: FC<LeftProps> = () => {
+	const { weather, index, callPrevious, callNext } = useContext(WeatherContext);
 	return (
 		<div
 			className={`p-5 flex justify-between flex-row ${cities[index]} lg:w-2/5`}

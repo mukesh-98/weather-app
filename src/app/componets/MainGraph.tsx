@@ -1,22 +1,15 @@
-import { FC } from "react";
+"use client";
+import { FC, useContext } from "react";
 import { IoIosRefreshCircle } from "react-icons/io";
 import { VscGraphLine } from "react-icons/vsc";
 import CitiesGraph from "./CitiesGraph";
-import { Root } from "../type";
+import { WeatherContext } from "../context/Weather";
 
-type MainGraphProps = {
-	handleShowGraph: any;
-	getAllWeatherData: any;
-	showGarph: boolean;
-	weather: Root[];
-};
+type MainGraphProps = {};
 
-const MainGraph: FC<MainGraphProps> = ({
-	handleShowGraph,
-	showGarph,
-	getAllWeatherData,
-	weather,
-}) => {
+const MainGraph: FC<MainGraphProps> = () => {
+	const { handleShowGraph, showGarph, getAllWeatherData, weather } =
+		useContext(WeatherContext);
 	return (
 		<>
 			<div className="toolbar flex justify-between   md:p-4 rounded-md mb-3 ">
@@ -52,8 +45,8 @@ const MainGraph: FC<MainGraphProps> = ({
 					</button>
 				</div>
 			</div>
-			{showGarph && (
-				<CitiesGraph data={weather.map((ele) => ele.current.temp_c)} />
+			{showGarph && weather && weather?.length > 0 && (
+				<CitiesGraph data={weather?.map((ele) => ele.current.temp_c)} />
 			)}
 			{showGarph && (
 				<p className="text-black text-md leading-6 mt-2">

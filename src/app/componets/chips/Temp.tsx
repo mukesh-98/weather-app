@@ -8,7 +8,7 @@ interface TempProps {
 
 const Temp: FC<TempProps> = ({ cityWeatherData }) => {
 	return (
-		<div className=" p-4 rounded-2xl  flex flex-col  justify-between bg-white m-3 flex-1 w-full">
+		<div className=" p-4 rounded-2xl  flex flex-col  justify-between bg-white md:m-3 mb-3 flex-1 w-full">
 			<div className="flex justify-between">
 				<p className="text-black text-md leading-6">Feels Like</p>
 				<div className="bg-blue-500 rounded-md p-1">
