@@ -138,10 +138,6 @@ body {
 	transition: opacity 0.8s ease 0.1s;
 }
 
-.deg::after {
-	content: "o";
-	vertical-align: super;
-}
 .weather-loader {
 	width: 70px;
 	height: 70px;

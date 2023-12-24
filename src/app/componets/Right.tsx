@@ -23,7 +23,7 @@ const Right: FC<RightProps> = ({
 	index,
 }) => {
 	return (
-		<div className="bg-blue-100  lg:rounded-l-3xl lg:rounded-r-none rounded-t-3xl p-10 lg:w-3/5 h-screen">
+		<div className="bg-blue-100  lg:rounded-l-3xl lg:rounded-r-none rounded-t-3xl p-10 lg:w-3/5 ">
 			<MainGraph
 				handleShowGraph={handleShowGraph}
 				getAllWeatherData={getAllWeatherData}

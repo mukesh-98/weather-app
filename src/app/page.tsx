@@ -6,7 +6,7 @@ import Left from "./componets/Left";
 import Right from "./componets/Right";
 
 export default function Home() {
-	const [weather, setWeather] = useState<Root[]>([]);
+	const [weather, setWeather] = useState<Root[]>();
 	const [index, setIndex] = useState(0);
 	const [showGarph, setShowGraph] = useState(false);
 
@@ -34,6 +34,10 @@ export default function Home() {
 		setIndex((i) => (i >= cities.length - 1 ? 0 : i + 1));
 	}
 
+	const handleShowGraph = () => {
+		setShowGraph((pre) => !pre);
+	};
+
 	if (!weather) {
 		return (
 			<div className=" bg-blue-500 h-screen">
@@ -41,9 +45,7 @@ export default function Home() {
 			</div>
 		);
 	}
-	const handleShowGraph = () => {
-		setShowGraph((pre) => !pre);
-	};
+
 	return (
 		<div className="bg-blue-500 flex flex-col lg:flex-row h-screen w-full ">
 			<Left
