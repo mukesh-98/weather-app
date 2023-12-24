@@ -7,7 +7,7 @@ interface UVProps {
 
 const UV: FC<UVProps> = ({ cityWeatherData }) => {
 	return (
-		<div className=" p-4 rounded-2xl self-center justify-center bg-white m-3 w-full md:w-1/3">
+		<div className=" p-4 rounded-2xl  flex flex-col  justify-between bg-white m-3 flex-1 w-full ">
 			<div className="flex justify-between">
 				<p className="text-black text-md leading-6">UV Index</p>
 				<div className="bg-blue-500 rounded-md p-1">
@@ -32,7 +32,7 @@ const UV: FC<UVProps> = ({ cityWeatherData }) => {
 					<p className="text-red-700 text-md"> Very bad</p>
 				)}
 			</div>
-			<div className="flex w-full justify-between">
+			<div className="flex justify-between">
 				{[
 					{ label: "0-2", value: 2 },
 					{ label: "3-5", value: 5 },
@@ -42,7 +42,7 @@ const UV: FC<UVProps> = ({ cityWeatherData }) => {
 				].map((ele) => (
 					<div
 						key={ele.value}
-						className="w-20"
+						className="w-1/5"
 					>
 						<p
 							className="text-slate-500 text-center"

@@ -15,7 +15,7 @@ type LeftProps = {
 const Left: FC<LeftProps> = ({ weather, index, callPrevious, callNext }) => {
 	return (
 		<div
-			className={`md:w-full lg:w-2/5 lg:h-screen p-5 flex justify-between flex-row ${cities[index]}`}
+			className={`p-5 flex justify-between flex-row ${cities[index]} lg:w-2/5`}
 		>
 			<button
 				className="left hover:bg-blue-300 hover:text-blue-600"

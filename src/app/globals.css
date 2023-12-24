@@ -24,7 +24,7 @@
 }
 
 body {
-	overflow: hidden;
+	/* overflow: hidden; */
 	color: rgb(var(--foreground-rgb));
 	background: -webkit-gradient(
 			linear,

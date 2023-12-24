@@ -8,7 +8,7 @@ interface RainProps {
 
 const Rain: FC<RainProps> = ({ cityWeatherData }) => {
 	return (
-		<div className=" p-4 rounded-2xl self-center justify-center bg-white m-3 w-full md:w-1/3">
+		<div className=" p-4 rounded-2xl flex flex-col  justify-between bg-white m-3 flex-1 w-full ">
 			<div className="flex justify-between">
 				<p className="text-black text-md leading-6">Chance of rain</p>
 				<div className="bg-blue-500 rounded-md p-1">

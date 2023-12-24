@@ -6,7 +6,7 @@ import Left from "./componets/Left";
 import Right from "./componets/Right";
 
 export default function Home() {
-	const [weather, setWeather] = useState<Root[]>();
+	const [weather, setWeather] = useState<Root[]>([]);
 	const [index, setIndex] = useState(0);
 	const [showGarph, setShowGraph] = useState(false);
 
@@ -45,7 +45,7 @@ export default function Home() {
 		setShowGraph((pre) => !pre);
 	};
 	return (
-		<div className="bg-blue-500 flex flex-col lg:flex-row ">
+		<div className="bg-blue-500 flex flex-col lg:flex-row h-screen w-full ">
 			<Left
 				weather={weather}
 				index={index}

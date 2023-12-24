@@ -7,7 +7,7 @@ interface PrecipitationProps {
 
 const Precipitation: FC<PrecipitationProps> = ({ cityWeatherData }) => {
 	return (
-		<div className=" p-4 rounded-2xl self-center justify-center bg-white m-3 w-full md:w-1/3">
+		<div className=" p-4 rounded-2xl flex flex-col  justify-between bg-white m-3 flex-1 w-full ">
 			<div className="flex justify-between">
 				<p className="text-black text-md leading-6">Precipiation</p>
 				<div className="bg-blue-500 rounded-md p-1">
@@ -19,7 +19,7 @@ const Precipitation: FC<PrecipitationProps> = ({ cityWeatherData }) => {
 					{cityWeatherData?.current?.precip_mm} ich
 				</p>
 			</div>
-			<div className="flex w-full justify-between">
+			<div className="flex  justify-between">
 				{[
 					{ label: "10", value: 10 },
 					{ label: "20", value: 20 },
@@ -35,7 +35,7 @@ const Precipitation: FC<PrecipitationProps> = ({ cityWeatherData }) => {
 				].map((ele) => (
 					<div
 						key={ele.value}
-						className="w-20"
+						className="w-1/5"
 					>
 						<p
 							className="text-slate-500 text-center"

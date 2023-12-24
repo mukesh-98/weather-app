@@ -23,7 +23,7 @@ const Right: FC<RightProps> = ({
 	index,
 }) => {
 	return (
-		<div className="bg-blue-100 md:w-full lg:w-3/5  lg:h-screen  md:h-full   lg:rounded-l-3xl lg:rounded-r-none rounded-t-3xl p-10 ">
+		<div className="bg-blue-100  lg:rounded-l-3xl lg:rounded-r-none rounded-t-3xl p-10 lg:w-3/5 h-screen">
 			<MainGraph
 				handleShowGraph={handleShowGraph}
 				getAllWeatherData={getAllWeatherData}
@@ -37,12 +37,12 @@ const Right: FC<RightProps> = ({
 						key={ele}
 						className={` ${ele === cities[index] ? "visible " : "not-visible"}`}
 					>
-						<div className="flex  flex-col md:flex-row ">
+						<div className="flex  flex-col md:flex-row justify-between ">
 							<Humidity cityWeatherData={cityWeatherData} />
 							<Wind cityWeatherData={cityWeatherData} />
 							<Precipitation cityWeatherData={cityWeatherData} />
 						</div>
-						<div className="flex  flex-col md:flex-row ">
+						<div className="flex  flex-col md:flex-row  justify-between">
 							<UV cityWeatherData={cityWeatherData} />
 							<Temp cityWeatherData={cityWeatherData} />
 							<Rain cityWeatherData={cityWeatherData} />
