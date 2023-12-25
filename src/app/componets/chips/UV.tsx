@@ -53,11 +53,7 @@ const UV: FC<UVProps> = ({ cityWeatherData }) => {
 						<div className="border rounded-md mx-1 border-blue-100  h-3">
 							<div
 								style={{
-									width:
-										ele.min <= cityWeatherData?.current?.uv &&
-										ele.max > cityWeatherData?.current?.uv
-											? `${33.33 * cityWeatherData?.current?.uv}%`
-											: 0,
+									width: ele.max <= cityWeatherData?.current?.uv ? `100%` : 0,
 								}}
 								className="bg-blue-500  rounded-md h-3"
 							/>

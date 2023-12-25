@@ -36,7 +36,7 @@ const Temp: FC<TempProps> = ({ cityWeatherData }) => {
 			<div className="border rounded-md  border-blue-100">
 				<div
 					style={{
-						width: `${cityWeatherData?.current?.feelslike_c}%`,
+						width: `${cityWeatherData?.current?.feelslike_c * 2}%`,
 						height: 10,
 					}}
 					className="bg-blue-500  rounded-md"
