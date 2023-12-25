@@ -15,21 +15,21 @@ const UV: FC<UVProps> = ({ cityWeatherData }) => {
 				</div>
 			</div>
 			<div className="flex justify-center my-2 items-baseline">
-				<p className="text-black text-3xl">{cityWeatherData?.current?.uv}</p>
+				<p className="text-black text-3xl mr-2">{cityWeatherData?.current?.uv}</p>
 				{cityWeatherData?.current?.uv > 0 && cityWeatherData?.current?.uv <= 2 && (
-					<p className="text-green-700 text-md">Very Good</p>
+					<p className="text-green-700 text-sm">Very Good</p>
 				)}
 				{cityWeatherData?.current?.uv > 2 && cityWeatherData?.current?.uv <= 5 && (
-					<p className="text-green-500 text-md">Good</p>
+					<p className="text-green-500 text-sm">Good</p>
 				)}
 				{cityWeatherData?.current?.uv > 5 && cityWeatherData?.current?.uv <= 7 && (
-					<p className="text-blue-500 text-md">Medium </p>
+					<p className="text-blue-500 text-sm">Medium </p>
 				)}
 				{cityWeatherData?.current?.uv > 7 && cityWeatherData?.current?.uv <= 10 && (
-					<p className="text-red-500 text-md">Bad</p>
+					<p className="text-red-500 text-sm">Bad</p>
 				)}
 				{cityWeatherData?.current?.uv > 11 && (
-					<p className="text-red-700 text-md"> Very bad</p>
+					<p className="text-red-700 text-sm"> Very bad</p>
 				)}
 			</div>
 			<div className="flex justify-between">

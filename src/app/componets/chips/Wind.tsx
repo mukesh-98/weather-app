@@ -15,7 +15,8 @@ const Wind: FC<WindProps> = ({ cityWeatherData }) => {
 				</div>
 			</div>
 			<p className="text-black text-3xl pb-4">
-				{cityWeatherData?.current?.wind_kph} kmph
+				{cityWeatherData?.current?.wind_kph}
+				<span className="text-base text-slate-600"> kmph</span>
 			</p>
 		</div>
 	);

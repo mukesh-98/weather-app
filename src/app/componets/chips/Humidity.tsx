@@ -15,18 +15,21 @@ const Humidity: FC<HumidityProps> = ({ cityWeatherData }) => {
 				</div>
 			</div>
 			<div className="flex justify-center my-2 items-baseline">
-				<p className="text-black text-3xl">{cityWeatherData?.current?.humidity}%</p>
+				<p className="text-black text-3xl mr-2">
+					{cityWeatherData?.current?.humidity}
+					<span className="text-base text-slate-600">% </span>
+				</p>
 				{cityWeatherData?.current?.humidity > 0 &&
 					cityWeatherData?.current?.humidity <= 40 && (
-						<p className="text-green-500 text-md">Good</p>
+						<p className="text-green-500 text-sm">Good</p>
 					)}
 				{cityWeatherData?.current?.humidity > 40 &&
 					cityWeatherData?.current?.humidity <= 80 && (
-						<p className="text-green-500 text-md">Normal</p>
+						<p className="text-green-500 text-sm">Normal</p>
 					)}
 				{cityWeatherData?.current?.humidity > 80 &&
 					cityWeatherData?.current?.humidity <= Number.NEGATIVE_INFINITY && (
-						<p className="text-red-500 text-md">Bad</p>
+						<p className="text-red-500 text-sm">Bad</p>
 					)}
 			</div>
 			<div className="border rounded-md  border-blue-100">

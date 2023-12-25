@@ -18,7 +18,7 @@ const Temp: FC<TempProps> = ({ cityWeatherData }) => {
 			<div className="flex justify-center my-2 items-baseline">
 				<p className="text-black text-3xl deg">
 					{cityWeatherData?.current?.feelslike_c}
-					<sup>o</sup>
+					<sup>c</sup>
 				</p>
 			</div>
 			<div className="flex justify-between">

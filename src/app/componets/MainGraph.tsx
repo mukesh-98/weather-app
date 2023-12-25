@@ -10,6 +10,7 @@ type MainGraphProps = {};
 const MainGraph: FC<MainGraphProps> = () => {
 	const { handleShowGraph, showGarph, getAllWeatherData, weather } =
 		useContext(WeatherContext);
+
 	return (
 		<>
 			<div className="toolbar flex justify-between   md:p-4 rounded-md mb-3 ">
@@ -49,7 +50,7 @@ const MainGraph: FC<MainGraphProps> = () => {
 				<CitiesGraph data={weather?.map((ele) => ele.current.temp_c)} />
 			)}
 			{showGarph && (
-				<p className="text-black text-md leading-6 mt-2">
+				<p className="text-slate-500 text-sm leading-6 my-2">
 					More details about weather
 				</p>
 			)}

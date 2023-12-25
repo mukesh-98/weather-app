@@ -38,6 +38,9 @@ const Weather: FC<any> = (props) => {
 	}
 
 	const handleShowGraph = () => {
+		if (!showGarph) {
+			getAllWeatherData();
+		}
 		setShowGraph((pre) => !pre);
 	};
 	return (

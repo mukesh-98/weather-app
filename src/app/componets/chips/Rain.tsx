@@ -16,7 +16,10 @@ const Rain: FC<RainProps> = ({ cityWeatherData }) => {
 				</div>
 			</div>
 			<div className="flex justify-center my-2 items-baseline">
-				<p className="text-black text-3xl">{cityWeatherData?.current?.cloud}%</p>
+				<p className="text-black text-3xl">
+					{cityWeatherData?.current?.cloud}
+					<span className="text-base text-slate-600">%</span>
+				</p>
 			</div>
 			<div className="flex justify-between">
 				{[0, 25, 50, 75, 100].map((ele) => (

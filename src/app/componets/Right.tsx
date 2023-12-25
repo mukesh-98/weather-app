@@ -13,7 +13,7 @@ type RightProps = {};
 const Right: FC<RightProps> = ({}) => {
 	const { weather, index } = useContext(WeatherContext);
 	return (
-		<div className="bg-blue-100  lg:rounded-l-3xl lg:rounded-r-none rounded-t-3xl p-10 lg:w-3/5 lg:overflow-y-auto ">
+		<div className="bg-blue-100  lg:rounded-l-3xl lg:rounded-r-none rounded-t-3xl p-10 lg:w-3/5 lg:overflow-y-auto flex flex-col">
 			<MainGraph />
 			{cities.map((ele, i) => {
 				const cityWeatherData = weather?.[i];

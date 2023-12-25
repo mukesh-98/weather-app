@@ -16,7 +16,8 @@ const Precipitation: FC<PrecipitationProps> = ({ cityWeatherData }) => {
 			</div>
 			<div className="flex justify-center my-2 items-baseline">
 				<p className="text-black text-3xl">
-					{cityWeatherData?.current?.precip_mm} ich
+					{cityWeatherData?.current?.precip_mm}
+					<span className="text-base text-slate-600">ich</span>
 				</p>
 			</div>
 			<div className="flex  justify-between">
