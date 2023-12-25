@@ -36,7 +36,7 @@ const CitiesGraph: FC<CitiesGraphProps> = ({ data }) => {
 						data,
 					},
 				]}
-				type="line"
+				type="bar"
 				height={"100%"}
 				width={"100%"}
 			/>
